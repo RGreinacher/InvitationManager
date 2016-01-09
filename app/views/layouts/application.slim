@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title Ein Vierteljahrhundert RG
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    link href="#{asset_path('favicon.png')}" rel="icon" type="image/png"
+    meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'
+  body
+    = render 'cookies_eu/consent_banner'
+    = render 'shared/navigation'
+    = render 'shared/flash'
+    .content-container
+      .container
+        = yield
+    = render 'shared/footer'
+
+    == javascript_include_tag :application, 'data-turbolinks-track' => true
+    = yield :javascript_includes

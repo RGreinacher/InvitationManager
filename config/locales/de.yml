@@ -19,5 +19,21 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+de:
+    guests:
+        attributes:
+            name: Name
+            participating: Teilnahme
+            companions: Begleitung(en)
+            notice: Notiz
+            email: Email Adresse
+            emails-sent: '#Emails'
+            token: Token
+            options: Optionen
+        index:
+            headline: Gästeliste
+        guest-list:
+            no-guests-in-list: Keine Gäste in dieser Liste
+        new:
+            headline: Neuen Gast anlegen
+            salutation: Anrede

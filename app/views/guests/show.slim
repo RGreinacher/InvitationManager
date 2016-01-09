@@ -1,0 +1,49 @@
+.row.show-guest-title-row
+  .col-xs-9
+    h1.show-guest-heading = @guest.name
+  .col-xs-3.show-guest-options
+    = link_to fa_icon('pencil'), edit_guest_path(@guest)
+    = link_to fa_icon('trash'), @guest, method: :delete, data: { confirm: 'Are you sure?' }
+
+table
+  tr
+    td
+      strong = t('guests.attributes.name')
+    td
+      = @guest.name
+  tr
+    td
+      strong = t('guests.attributes.participating')
+    td
+      = 'unentschieden' if @guest.participating.nil? || @guest.participating == 'undecided'
+      = 'Sorry Dude, komme nicht' if @guest.participating == 'turned_down'
+      = 'Bin mir nicht sicher' if @guest.participating == 'not_sure'
+      = 'Sehr geil, ich komme!' if @guest.participating == 'participating'
+  - if @guest.companions > 0
+    tr
+      td
+        strong = t('guests.attributes.companions')
+      td
+        = @guest.companions
+  - if @guest.notice && @guest.notice != ''
+    tr
+      td
+        strong = t('guests.attributes.notice')
+      td
+        = @guest.notice
+  tr
+    td
+      strong = t('guests.attributes.email')
+    td
+      = @guest.email
+  - if @guest.emails_sent && @guest.emails_sent > 0
+    tr
+      td
+        strong = t('guests.attributes.emails-sent')
+      td
+        = @guest.emails_sent
+  tr
+    td
+      strong = t('guests.attributes.token')
+    td
+      = @guest.token

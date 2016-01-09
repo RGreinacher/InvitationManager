@@ -1,0 +1,20 @@
+h1 = t('guests.new.headline')
+
+= simple_form_for @guest do |f|
+  - if @guest.errors.any?
+    #error_explanation
+      h2 = pluralize(@guest.errors.count, 'error') + 'prohibited this guest from being saved:'
+      ul
+        - @guest.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.input :salutation, label: t('guests.new.salutation')
+  .field
+    = f.input :name
+  .field
+    = f.input :email
+  .actions
+    = f.submit
+
+= link_to 'Back', guests_path

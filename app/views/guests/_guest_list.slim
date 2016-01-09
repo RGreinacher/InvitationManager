@@ -1,0 +1,22 @@
+- if guests.any?
+  table.table.table-hover
+    thead
+      tr
+        th = t('guests.attributes.name')
+        th = t('guests.attributes.companions')
+        th = t('guests.attributes.notice')
+        th = t('guests.attributes.emails-sent')
+        th.options-cell = t('guests.attributes.options')
+        th colspan="4"
+    tbody
+      - guests.each do |guest| %
+        tr
+          td = link_to(guest.name, guest) + " (#{guest.email})"
+          td = guest.companions > 0? "+#{guest.companions}" : fa_icon('minus')
+          td = (guest.notice.nil? || guest.notice.empty?)? fa_icon('minus') : fa_icon('check')
+          td = guest.emails_sent
+          td.options-cell
+            = link_to fa_icon('pencil'), edit_guest_path(guest)
+            = link_to fa_icon('trash'), guest, method: :delete, data: { confirm: 'Are you sure?' }
+- else
+  p = t('guests.guest-list.no-guests-in-list')

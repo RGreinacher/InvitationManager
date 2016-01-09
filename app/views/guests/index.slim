@@ -1,0 +1,19 @@
+p#notice = notice
+
+.row
+  .col-xs-9
+    h1.new-guest-heading = t('guests.index.headline')
+  .col-xs-3
+    = link_to fa_icon('plus'), new_guest_path, class: 'new-guest-link'
+
+h3 = "Zusagen: #{@participating_guests.count + @participating_guests.sum(:companions)}"
+= render 'guest_list', guests: @participating_guests
+
+h3 = "Unsicher: #{@not_sure_guests.count + @not_sure_guests.sum(:companions)}"
+= render 'guest_list', guests: @not_sure_guests
+
+h3 = "Absagen: #{@turned_down_guests.count + @turned_down_guests.sum(:companions)}"
+= render 'guest_list', guests: @turned_down_guests
+
+h3 = "Noch nicht entschieden: #{@undecided_guests.count + @undecided_guests.sum(:companions)}"
+= render 'guest_list', guests: @undecided_guests

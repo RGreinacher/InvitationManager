@@ -1,0 +1,47 @@
+h1
+  = "#{@guest.salutation} #{@guest.name}"
+
+p
+  | Am 
+  strong 23. Januar 
+  | feiere ich um 
+  strong 19:00 Uhr 
+  | in der 
+  strong Karl-Kunger-Str. 64 in 12435 Berlin (Alt-Treptow) 
+  | meinen Geburtstag (nach) und möchte dich gerne einladen. Bitte gib mir kurz Bescheid ob du kommst und wen bzw. wie viele coole Menschen du ggf. mitbringst.
+
+p
+  | Ich freue mich sehr dich zu sehen. Wenn du Lust hast auch noch Dinge die du selbst magst mitzubringen kannst du das in die entsprechende Liste schreiben die für alle Eingeladenen sichtbar ist.
+
+- simple_form_for @guest do |f|
+  -if @guest.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@guest.errors.count, 'error')} prohibited this guest from being saved:"
+
+      ul
+      - @guest.errors.full_messages.each do |message|
+        li = message
+
+  = f.input :participating,
+      collection: Guest.participating,
+      selected: Guest.participating.first,
+      label: 'Art',
+      input_html: { class: 'col-xs-12' }
+
+  / .field
+  /   = f.label 'Sehr geil, ich bin dabei!'
+  /   = radio_button :guest, :participating, Guest.participating[3]
+  / .field
+  /   = f.label 'Bin mir noch nicht sicher...'
+  /   = radio_button :guest, :participating, Guest.participating[2]
+  / .field
+  /   = f.label 'Sorry dude, komme nicht'
+  /   = radio_button :guest, :participating, Guest.participating[1]
+  .field
+    = f.input :companions, label: 'Ich bringe so viele Leute mit:'
+  .field
+    = f.input :notice, label: 'private Notiz'
+  .actions
+    = f.submit
+
+p wow!

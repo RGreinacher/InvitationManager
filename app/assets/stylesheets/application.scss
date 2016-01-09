@@ -1,0 +1,64 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require cookies_eu
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+@import "variables";
+
+html, body {
+  background-color: $key-color;
+  color: $text-color;
+}
+
+a, a:visited, a:hover {
+  background-color: inherit;
+  color: $text-color;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.text-right {
+  text-align: right
+}
+
+nav {
+  background-color: $key-color;
+  color: $text-over-color;
+  height: 40px;
+  line-height: 40px;
+}
+
+.content-container {
+  background-color: $white;
+  padding: 15px 0 40px;
+  width: 100%;
+}
+
+footer {
+  color: $text-over-color;
+  height: 40px;
+  line-height: 40px;
+  padding-bottom: 0;
+  width: 100%;
+
+  a, a:visited, a:hover {
+    color: $text-over-color;
+  }
+}
