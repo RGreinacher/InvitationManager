@@ -15,6 +15,4 @@ h1 = t('guests.new.headline')
   .field
     = f.input :email
   .actions
-    = f.submit
-
-= link_to 'Back', guests_path
+    = f.submit t('guests.new.save'), class: 'btn btn-default'

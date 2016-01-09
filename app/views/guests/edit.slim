@@ -13,8 +13,8 @@ p
 p
   | Ich freue mich sehr dich zu sehen. Wenn du Lust hast auch noch Dinge die du selbst magst mitzubringen kannst du das in die entsprechende Liste schreiben die für alle Eingeladenen sichtbar ist.
 
-- simple_form_for @guest do |f|
-  -if @guest.errors.any?
+= simple_form_for @guest do |f|
+  - if @guest.errors.any?
     #error_explanation
       h2 = "#{pluralize(@guest.errors.count, 'error')} prohibited this guest from being saved:"
 
@@ -22,26 +22,13 @@ p
       - @guest.errors.full_messages.each do |message|
         li = message
 
-  = f.input :participating,
-      collection: Guest.participating,
-      selected: Guest.participating.first,
-      label: 'Art',
-      input_html: { class: 'col-xs-12' }
-
-  / .field
-  /   = f.label 'Sehr geil, ich bin dabei!'
-  /   = radio_button :guest, :participating, Guest.participating[3]
-  / .field
-  /   = f.label 'Bin mir noch nicht sicher...'
-  /   = radio_button :guest, :participating, Guest.participating[2]
-  / .field
-  /   = f.label 'Sorry dude, komme nicht'
-  /   = radio_button :guest, :participating, Guest.participating[1]
+  .field
+    = f.input :participating,
+              selected: Guest.participating.first,
+              label: t('guests.edit.participation-selection')
   .field
     = f.input :companions, label: 'Ich bringe so viele Leute mit:'
   .field
     = f.input :notice, label: 'private Notiz'
   .actions
-    = f.submit
-
-p wow!
+    = f.submit t('guests.edit.save'), class: 'btn btn-default'

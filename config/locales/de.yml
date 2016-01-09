@@ -37,3 +37,14 @@ de:
         new:
             headline: Neuen Gast anlegen
             salutation: Anrede
+            save: Gast speichern
+        edit:
+            participation-selection: Meine Antwort
+            save: Antworten speichern
+    enums:
+        guest:
+            participating:
+                undecided: Noch nicht entschieden
+                turned_down: Ich kann leider nicht
+                not_sure: Weiß ich noch nicht genau
+                participating: Bin dabei!
