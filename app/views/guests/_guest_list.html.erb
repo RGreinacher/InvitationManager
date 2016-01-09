@@ -1,0 +1,29 @@
+<% if guests.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Companions</th>
+        <th>Emails sent</th>
+        <th>Options</th>
+        <th colspan="4"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% guests.each do |guest| %>
+        <tr>
+          <td><%= link_to guest.name, guest %> (<%= guest.email %>)</td>
+          <td><%= "+ #{guest.companions}" if guest.companions > 0 %></td>
+          <td><%= guest.emails_sent %></td>
+          <td>
+            <%= link_to 'Edit', edit_guest_path(guest) %>
+            <%= link_to 'Destroy', guest, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>keine Gäste</p>
+<% end %>

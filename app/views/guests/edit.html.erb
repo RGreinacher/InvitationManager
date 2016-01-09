@@ -1,0 +1,47 @@
+<h1><%= "#{@guest.salutation} #{@guest.name}" %></h1>
+
+<p>
+  Am <strong>23. Januar</strong> feiere ich um <strong>19:00 Uhr</strong> in der <strong>Karl-Kunger-Str. 64 in 12435 Berlin (Alt-Treptow)</strong> meinen Geburtstag (nach) und möchte dich gerne einladen. Bitte gib mir kurz Bescheid ob du kommst und wen du ggf. mitbringst. Ich freue mich sehr dich zu sehen. Wenn du Lust hast auch noch Dinge die du selbst magst mitzubringen kannst du das in die entsprechende Liste schreiben die für alle Gäste sichtbar ist.
+</p>
+
+<%= form_for(@guest) do |f| %>
+  <% if @guest.errors.any? %>
+    <div id='error_explanation'>
+      <h2><%= pluralize(@guest.errors.count, 'error') %> prohibited this guest from being saved:</h2>
+
+      <ul>
+      <% @guest.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class='field'>
+    <%= f.label 'Sehr geil, ich bin dabei!' %>
+    <%= radio_button :guest, :participating, Guest.participating[3] %>
+  </div>
+  <div class='field'>
+    <%= f.label 'Bin mir noch nicht sicher...' %>
+    <%= radio_button :guest, :participating, Guest.participating[2] %>
+  </div>
+  <div class='field'>
+    <%= f.label 'Sorry dude, komme nicht' %>
+    <%= radio_button :guest, :participating, Guest.participating[1] %>
+  </div>
+  <div class='field'>
+    <%= f.label 'Ich bringe so viele Leute mit:' %><br>
+    <%= f.text_field :companions %>
+  </div>
+  <div class='field'>
+    <%= f.label 'private Notiz' %><br>
+    <%= f.text_area :notice %>
+  </div>
+  <div class='actions'>
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Show', @guest %> |
+<%= link_to 'Back', guests_path %>

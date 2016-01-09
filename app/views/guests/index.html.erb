@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gästeliste</h1>
+<%= link_to '+', new_guest_path %>
+
+<h2>Zusagen: <%= @participating_guests.count + @participating_guests.sum(:companions) %></h2>
+<%= render 'guest_list', guests: @participating_guests %>
+
+<h2>Unsicher: <%= @not_sure_guests.count + @not_sure_guests.sum(:companions) %></h2>
+<%= render 'guest_list', guests: @not_sure_guests %>
+
+<h2>Absagen: <%= @turned_down_guests.count + @turned_down_guests.sum(:companions) %></h2>
+<%= render 'guest_list', guests: @turned_down_guests %>
+
+<h2>Noch nicht entschieden: <%= @undecided_guests.count + @undecided_guests.sum(:companions) %></h2>
+<%= render 'guest_list', guests: @undecided_guests %>
