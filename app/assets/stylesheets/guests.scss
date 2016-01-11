@@ -44,6 +44,21 @@ label.enum_radio_buttons {
   width: 15px;
 }
 
+.presents-container {
+  margin-top: 50px;
+
+  h3.aligned-headspace {
+    margin-top: 5px;
+  }
+}
+
+.no-style-button {
+  background-color: inherit;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
 // index
 .options-cell {
   text-align: right;

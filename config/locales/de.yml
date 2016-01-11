@@ -26,12 +26,13 @@ de:
             participating: Teilnahme
             companions: Begleitung(en)
             notice: Notiz
+            presents: Mitbringsel
             email: Email Adresse
             emails-sent: '#Emails'
             token: Token
             options: Optionen
         index:
-            headline: Partygästeliste
+            headline: Gästeliste für den 23. Januar
         guest-list:
             no-guests-in-list: Keine Gäste in dieser Liste
         new:
@@ -43,13 +44,22 @@ de:
             companions-label: Ich bringe so viele Leute mit
             notice-label: Notiz an Robert
             save: Antworten speichern
+    presents:
+        headline: Optionale Mitbringsel
+        new-description: Was willst du mitbringen?
+        input-placeholder: Bier, Wein, Kuchen, gute Laune, ...
+        save: Mitbringsel hinzufügen
+        description: Ding
+        guest: Mitbringende(r)
+        delete: Löschen
+        no-presents: Bisher bringt niemand etwas mit.
     enums:
         guest:
             participating:
-                undecided: Noch nicht entschieden
-                turned_down: Ich kann leider nicht
-                not_sure: Weiß ich noch nicht genau
-                participating: Bin dabei!
+                undecided: Das habe ich noch nicht entschieden.
+                turned_down: Sorry, ich schaffs leider nicht.
+                not_sure: Weiß ich noch nicht genau. Vielleicht!
+                participating: Sehr geil, ich bin dabei!
     flashes:
         titles:
             notice: 'Das hat geklappt:'
@@ -58,8 +68,12 @@ de:
             alert: Achtung!
         messages:
             create-success: Gast wurde erfolgreich erstellt.
+            present-create-success: Mitbringsel wurde erfolgreich erstellt.
             delete-success: Gast wurde erfolgreich gelöscht.
+            present-delete-success: Mitbringsel wurde erfolgreich gelöscht.
             update-success: Informationen wurden erfolgreich aktualisiert.
+            present-unable-to-create: Dieses Mitbringsel kann leider nicht erstellt werden. Versuche eine andere Formulierung.
     navigation:
         title: Ein Vierteljahrhundert RG
         guests_link: Alle Gäste anzeigen
+    delete-confirmation: Bist du sicher? Das kann nicht rückgängig gemacht werden.

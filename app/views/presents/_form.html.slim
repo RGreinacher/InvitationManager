@@ -1,0 +1,6 @@
+= simple_form_for @present do |f|
+  = f.input :guest_id, as: :hidden, input_html: { value: @guest.id }
+  .field
+    = f.input :description, label: false, placeholder: t('presents.input-placeholder')
+  .actions
+    = f.submit t('presents.save'), class: 'btn btn-default full-width'

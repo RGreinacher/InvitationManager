@@ -1,0 +1,11 @@
+.well
+  .row
+    .col-sm-5
+      h3.aligned-headspace
+        = t('presents.headline')
+      p
+        | Damit es nicht 5 Kuchen und 0 Bier gibt kannst du hier sehen was die Anderen vor haben mitzubringen und oder selbst etwas eintragen:
+      = render partial: 'presents/form'
+
+    .col-sm-7
+      = render partial: 'presents/presents_list'

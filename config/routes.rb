@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :presents
   resources :guests
 
   get '/impressum' => 'application#imprint', as: 'imprint'

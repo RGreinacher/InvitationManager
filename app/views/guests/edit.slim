@@ -11,27 +11,22 @@ p
   | meinen Geburtstag (nach) und möchte dich gerne einladen. Bitte gib mir kurz Bescheid ob du kommst und wen bzw. wie viele coole Menschen du ggf. mitbringst.
 
 p
-  | Ich freue mich sehr dich zu sehen. Wenn du Lust hast auch noch Dinge die du selbst magst mitzubringen kannst du das in die entsprechende Liste schreiben die für alle Eingeladenen sichtbar ist.
+  | Ich freue mich sehr dich zu sehen. Falls du auch noch Lust hast Dinge die du selbst magst mitzubringen kannst du das in die entsprechende Liste schreiben die für alle Eingeladenen sichtbar ist.
 
 = simple_form_for @guest, html: { class: 'guest-edit-form' } do |f|
-  - if @guest.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@guest.errors.count, 'error')} prohibited this guest from being saved:"
-
-      ul
-      - @guest.errors.full_messages.each do |message|
-        li = message
-
   .row
-    .col-sm-6.field
+    .col-sm-7.field
       = f.input :participating,
                 selected: Guest.participating.first,
                 as: :radio_buttons,
                 label: t('guests.edit.participation-selection')
-    .col-sm-6
+    .col-sm-5
       .field
         = f.input :companions, label: t('guests.edit.companions-label')
       .field
-        = f.input :notice, label: t('guests.edit.notice-label')
+        = f.input :notice, label: t('guests.edit.notice-label'), input_html: { rows: 4 }
   .actions
-    = f.submit t('guests.edit.save'), class: 'btn btn-default'
+    = f.submit t('guests.edit.save'), class: 'btn btn-default full-width'
+
+.presents-container
+  = render template: 'presents/index'

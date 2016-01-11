@@ -1,0 +1,22 @@
+- if @presents.any?
+  table.table.table-hover
+    thead
+      tr
+        th = t('presents.description')
+        th = t('presents.guest')
+        th.options-cell = t('presents.delete')
+    tbody
+      - @presents.each do |present| %
+        tr
+          td = present.description
+          td = present.guest.name
+          td.options-cell
+            - if present.guest == @guest
+              = simple_form_for present, method: :delete, html: { class: 'destroy-button-for-present-' + present.id.to_s } do |f|
+                = f.input :guest_id, as: :hidden, input_html: { value: @guest.id }
+                = button_tag type: 'submit', class: 'no-style-button', data: { confirm: t('delete-confirmation') } do
+                  = fa_icon('trash')
+            - else
+              = fa_icon('ban')
+- else
+  p = t('presents.no-presents')

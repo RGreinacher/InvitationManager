@@ -3,7 +3,7 @@
     h1.show-guest-heading = @guest.name
   .col-xs-3.show-guest-options
     = link_to fa_icon('pencil'), edit_guest_path(@guest)
-    = link_to fa_icon('trash'), @guest, method: :delete, data: { confirm: 'Are you sure?' }
+    = link_to fa_icon('trash'), @guest, method: :delete, data: { confirm: t('delete-confirmation') }
 
 table
   tr
@@ -25,6 +25,12 @@ table
         strong = t('guests.attributes.companions')
       td
         = @guest.companions
+  - if @guest.presents.count > 0
+    tr
+      td
+        strong = t('guests.attributes.presents')
+      td
+        = @guest.presents.map(&:description).join(' & ')
   - if @guest.notice && @guest.notice != ''
     tr
       td
