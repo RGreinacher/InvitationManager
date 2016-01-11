@@ -1,4 +1,7 @@
 nav
   .container
     .row
-      .col-sm-6 Ein Vierteljahrhundert RG
+      .col-sm-8
+        = t('navigation.title')
+      .col-sm-4.text-right
+        = link_to t('navigation.guests_link'), guests_path

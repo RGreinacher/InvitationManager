@@ -20,9 +20,32 @@
 @import "font-awesome";
 @import "variables";
 
+@font-face {
+  font-family: 'raleway-light';
+  font-style: normal;
+  src: $raleway-light;
+}
+
+@font-face {
+  font-family: 'raleway-semibold';
+  font-style: normal;
+  src: $raleway-semibold;
+}
+
 html, body {
   background-color: $key-color;
   color: $text-color;
+  font-family: 'raleway-light', Raleway, sans-serif;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'raleway-semibold', Raleway, sans-serif;
+}
+
+p, ol, ul, td {
+  font-family: 'raleway-light', Raleway, sans-serif;
+  font-size: 1em;
 }
 
 a, a:visited, a:hover {
@@ -38,25 +61,25 @@ a, a:visited, a:hover {
   text-align: right
 }
 
-nav {
-  background-color: $key-color;
-  color: $text-over-color;
-  height: 40px;
-  line-height: 40px;
-}
-
 .content-container {
   background-color: $white;
   padding: 15px 0 40px;
   width: 100%;
 }
 
+nav {
+  background-color: $key-color;
+}
+
 footer {
+  padding-bottom: 0;
+  width: 100%;
+}
+
+nav, footer {
   color: $text-over-color;
   height: 40px;
   line-height: 40px;
-  padding-bottom: 0;
-  width: 100%;
 
   a, a:visited, a:hover {
     color: $text-over-color;

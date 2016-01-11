@@ -2,7 +2,6 @@ class GuestsController < ApplicationController
   before_action :set_guest, only: [:show, :edit, :update, :destroy]
 
   # GET /guests
-  # GET /guests.json
   def index
     @participating_guests = Guest.where(participating: 3).order(:name)
     @not_sure_guests = Guest.where(participating: 2).order(:name)
@@ -11,7 +10,6 @@ class GuestsController < ApplicationController
   end
 
   # GET /guests/1
-  # GET /guests/1.json
   def show
   end
 
@@ -25,7 +23,6 @@ class GuestsController < ApplicationController
   end
 
   # POST /guests
-  # POST /guests.json
   def create
     @guest = Guest.new(guest_params)
     @guest.participating = :undecided
@@ -35,36 +32,29 @@ class GuestsController < ApplicationController
 
     respond_to do |format|
       if @guest.save
-        format.html { redirect_to @guest, notice: 'Guest was successfully created.' }
-        format.json { render :show, status: :created, location: @guest }
+        format.html { redirect_to @guest, notice: t('flashes.messages.create-success') }
       else
         format.html { render :new }
-        format.json { render json: @guest.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # PATCH/PUT /guests/1
-  # PATCH/PUT /guests/1.json
   def update
     respond_to do |format|
       if @guest.update(guest_params)
-        format.html { redirect_to @guest, notice: 'Guest was successfully updated.' }
-        format.json { render :show, status: :ok, location: @guest }
+        format.html { redirect_to @guest, notice: t('flashes.messages.update-success') }
       else
         format.html { render :edit }
-        format.json { render json: @guest.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /guests/1
-  # DELETE /guests/1.json
   def destroy
     @guest.destroy
     respond_to do |format|
-      format.html { redirect_to guests_url, notice: 'Guest was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to guests_url, notice: t('flashes.messages.delete-success') }
     end
   end
 
@@ -76,6 +66,14 @@ class GuestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def guest_params
-      params.require(:guest).permit(:name, :email, :participating, :companions, :emails_sent)
+      params.require(:guest).permit(
+        :name,
+        :notice,
+        :email,
+        :participating,
+        :companions,
+        :emails_sent,
+        :salutation
+      )
     end
 end

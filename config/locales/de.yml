@@ -31,7 +31,7 @@ de:
             token: Token
             options: Optionen
         index:
-            headline: Gästeliste
+            headline: Partygästeliste
         guest-list:
             no-guests-in-list: Keine Gäste in dieser Liste
         new:
@@ -40,6 +40,8 @@ de:
             save: Gast speichern
         edit:
             participation-selection: Meine Antwort
+            companions-label: Ich bringe so viele Leute mit
+            notice-label: Notiz an Robert
             save: Antworten speichern
     enums:
         guest:
@@ -48,3 +50,16 @@ de:
                 turned_down: Ich kann leider nicht
                 not_sure: Weiß ich noch nicht genau
                 participating: Bin dabei!
+    flashes:
+        titles:
+            notice: 'Das hat geklappt:'
+            success: Perfekt!
+            error: Fehler!
+            alert: Achtung!
+        messages:
+            create-success: Gast wurde erfolgreich erstellt.
+            delete-success: Gast wurde erfolgreich gelöscht.
+            update-success: Informationen wurden erfolgreich aktualisiert.
+    navigation:
+        title: Ein Vierteljahrhundert RG
+        guests_link: Alle Gäste anzeigen

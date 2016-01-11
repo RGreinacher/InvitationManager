@@ -31,8 +31,17 @@ td:first-of-type {
 }
 
 // edit
-.edit_guest {
+.guest-edit-form {
   margin-top: 30px;
+}
+
+label.enum_radio_buttons {
+  margin-bottom: 0;
+}
+
+.radio input[type="radio"] {
+  margin-top: -7px;
+  width: 15px;
 }
 
 // index

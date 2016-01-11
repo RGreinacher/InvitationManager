@@ -9,9 +9,9 @@ html
   body
     = render 'cookies_eu/consent_banner'
     = render 'shared/navigation'
-    = render 'shared/flash'
     .content-container
       .container
+        = render 'shared/flash'
         = yield
     = render 'shared/footer'
 
