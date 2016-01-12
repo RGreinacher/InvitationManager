@@ -45,7 +45,7 @@ class GuestsController < ApplicationController
   def update
     respond_to do |format|
       if @guest.update(guest_params)
-        format.html { redirect_to @guest, notice: t('flashes.messages.update-success') }
+        format.html { redirect_to edit_guest_path(@guest), notice: t('flashes.messages.update-success') }
       else
         format.html { render :edit }
       end
