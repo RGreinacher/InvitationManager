@@ -2,10 +2,10 @@ class Guest < ActiveRecord::Base
   has_many :presents, dependent: :destroy
 
   enum participating: {
-    participating: '3',
-    not_sure: '2',
-    turned_down: '1',
-    undecided: '0'
+    participating: 3,
+    not_sure: 2,
+    turned_down: 1,
+    undecided: 0
   }
 
   validates :companions,
