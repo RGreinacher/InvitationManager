@@ -53,6 +53,30 @@ de:
         guest: Mitbringende(r)
         delete: Löschen
         no-presents: Bisher bringt niemand etwas mit.
+    prepare-email:
+        headline: E-Mail Versand vorbereiten
+        from-address-name: hallo@robert-greinacher.de
+        edit-text:
+            headline: Text & Betreff
+            subject:
+                label: Betreff
+                value: Geburtstagseinladung -  Vierteljahrhundert Party
+            intro: Hallo!
+            outro: Ich freue mich auf dich! Beste Grüße Robert
+        link-info: 'Dein persönlicher Anmeldelink:'
+        guests-list:
+            headline: Email an folgende Gäste senden
+            blank: Es wurde kein Gast für den Emailversand ausgewählt
+            table:
+                head:
+                    name: Name
+                    email: Email
+                    email-count: '#Emails'
+    emails-sent:
+        headline: Emails werden versandt
+        description: Die E-Mails werden nun an die ausgewählten Gäste versandt. Anschließend wird ihre Markierung aufgehoben.
+        buttons:
+            back-to-index: Zurück zur Gästeliste
     enums:
         guest:
             participating:

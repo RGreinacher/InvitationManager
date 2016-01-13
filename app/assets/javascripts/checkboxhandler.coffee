@@ -5,45 +5,36 @@ class CheckboxHandler
 
   constructor: ->
     initAjax()
-    this.ajaxPath = $('.new-guest-heading').data('ajax-path')
 
     $('.select-all-guests').on 'click', ->
-      status = $(this).prop('checked')
-      filter = $('#list-of-guests').data('current-filter')
-      toggleAllCompanies(status, filter)
+      toggleAllGuests($(this).prop('checked'))
 
     $('.guest-checkbox').on 'click', ->
-      selectCompany($(this).val())
+      selectGuest($(this).val())
 
   initAjax = () ->
+    this.ajaxPath = $('.new-guest-heading').data('ajax-path')
     $.ajaxSetup
       headers:
         'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
 
-  toggleAllCompanies = (status, filter) ->
-    performAjaxRequest({
-      enqueue_all_guests: status,
-      current_filter: filter
-    })
+  toggleAllGuests = (status) ->
+    performAjaxRequest({ enqueue_all_guests: status })
+    $('.guest-checkbox').prop('checked', status)
 
-    if status
-      $('.guest-row:not(.hidden) .guest-checkbox').prop('checked', true)
-    else
-      $('.guest-checkbox').prop('checked', false)
-
-  selectCompany = (guest_id) ->
+  selectGuest = (guest_id) ->
     performAjaxRequest({ enqueue_guest: guest_id })
 
   performAjaxRequest = (data) ->
+    ajaxPath = this.ajaxPath
     $.ajax
       type: 'PATCH',
-      url: this.ajaxPath,
+      url: ajaxPath,
       dataType: 'json'
       data: data,
       success: ->
         console.log('successfully posted data via ajax')
-      error: ->
+      error: (a, b, c) ->
         console.log('faild to post data via ajax')
-
 
 window.checkboxHandler = CheckboxHandler()

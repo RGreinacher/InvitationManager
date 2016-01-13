@@ -1,0 +1,13 @@
+.prepare-email.container
+  .row
+    .col-xs-12
+      h1
+        = t('emails-sent.headline')
+  .row
+    .col-xs-12
+      p
+        = t('emails-sent.description')
+  .row
+    .col-xs-12
+      = link_to guests_path, class: 'btn btn-default full-width' do
+        = t('emails-sent.buttons.back-to-index')

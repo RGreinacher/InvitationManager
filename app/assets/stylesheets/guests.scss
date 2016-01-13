@@ -3,10 +3,6 @@
   margin: 0;
 }
 
-.new-guest-link {
-  font-size: 2.1em;
-  float: right;
-}
 
 // show
 .show-guest-title-row {
@@ -60,6 +56,18 @@ label.enum_radio_buttons {
 }
 
 // index
+.general-admin-options {
+  text-align: right;
+
+  a {
+    font-size: 2.1em;
+
+    &:last-of-type {
+      margin-left: 20px;
+    }
+  }
+}
+
 .options-cell {
   text-align: right;
 

@@ -1,0 +1,72 @@
+.prepare-email.container
+  .row
+    .col-xs-12
+      h1
+        = t('prepare-email.headline')
+
+  = simple_form_for :email_form, url: guests_send_emails_path, method: :patch do |f|
+    .row
+      .col-xs-12.col-sm-6
+        h3.inline-heading
+          = t('prepare-email.edit-text.headline')
+      .col-xs-12.col-sm-6
+        = f.input :email_subject,
+                  label: false,
+                  input_html: { class: 'full-width',
+                                value:  t('prepare-email.edit-text.subject.value') }
+    .row
+      .col-xs-12
+        = f.input :email_intro,
+                  as: :text,
+                  label: false,
+                  input_html: { rows: 5,
+                                value: t('prepare-email.edit-text.intro') }
+    .row
+      .col-xs-12
+        p.email-text-intermezzo
+          = t('prepare-email.link-info')
+          br
+          - login_url = "http://#{ENV.fetch('DOMAIN')}/?token=#{SecureRandom.hex}"
+          = link_to login_url, login_url
+    .row
+      .col-xs-12
+        = f.input :email_outro,
+                  as: :text,
+                  label: false,
+                  input_html: { rows: 5,
+                                value: t('prepare-email.edit-text.outro') }
+    .row
+      .col-xs-12
+        h3
+          = t('prepare-email.guests-list.headline')
+    .row
+      .col-xs-12
+        - if @guests.any?
+          table.table.table-hover#list-of-guests
+            thead
+              tr
+                th
+                  = t('prepare-email.guests-list.table.head.name')
+                th
+                  = t('prepare-email.guests-list.table.head.email')
+                th
+                  = t('prepare-email.guests-list.table.head.email-count')
+            tbody
+              - @guests.each do |guest|
+                tr class='guest-row'
+                  td
+                    = guest.name
+                  td
+                    = guest.email
+                  td
+                    = guest.emails_sent
+          .well.blank.hidden
+            = t('prepare-email.guests-list.blank')
+        - else
+          .well
+            = t('prepare-email.guests-list.blank')
+    .row
+      .col-xs-12
+        = button_tag(type: :submit, class: 'btn btn-default full-width') do
+          = fa_icon('paper-plane')
+          == "&nbsp;#{t('prepare-email.buttons.send-email')}"

@@ -1,0 +1,6 @@
+<%= @prelink_content %>
+
+<%= t('prepare-email.link-info') %>
+<%= "http://#{ENV.fetch('DOMAIN')}/?token=#{@guest.token}" %>
+
+<%= @postlink_content %>

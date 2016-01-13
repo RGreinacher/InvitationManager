@@ -7,8 +7,9 @@ p#notice = notice
   .col-xs-9
     h1.new-guest-heading data-ajax-path="#{guests_enqueue_path}"
       = t('guests.index.headline')
-  .col-xs-3
+  .col-xs-3.general-admin-options
     = link_to fa_icon('plus'), new_guest_path, class: 'new-guest-link'
+    = link_to fa_icon('envelope'), guests_prepare_email_path, class: 'email-queued-guests-link'
 
 h3 = "Zusagen: #{@participating_guests.count + @participating_guests.sum(:companions)}"
 = render 'guest_list', guests: @participating_guests

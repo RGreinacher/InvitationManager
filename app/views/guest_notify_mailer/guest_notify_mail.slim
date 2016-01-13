@@ -1,0 +1,15 @@
+ruby:
+  url = "http://#{ENV.fetch('DOMAIN')}/?token=#{@guest.token}"
+
+== @prelink_content.gsub("\n", "<br />")
+br
+br
+= t('prepare-email.link-info')
+br
+a href="#{url}"
+  = url
+br
+br
+== @postlink_content.gsub("\n", "<br />")
+br
+br
