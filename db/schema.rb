@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160111213647) do
+ActiveRecord::Schema.define(version: 20160113120845) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160111213647) do
     t.string   "token"
     t.text     "notice"
     t.string   "salutation"
+    t.boolean  "queued"
   end
 
   create_table "presents", force: :cascade do |t|

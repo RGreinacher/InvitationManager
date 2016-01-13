@@ -52,6 +52,22 @@ class GuestsController < ApplicationController
     end
   end
 
+  # PATCH /guests/enqueue/
+  def enqueue
+    if params.has_key? :enqueue_all_guests
+      Guest.all.each do |guest|
+        guest.queued = params[:enqueue_all_guests]
+        guest.save!
+      end
+    else
+      guest = Guest.find(params[:enqueue_guest].to_i)
+      guest.queued ^= true
+      guest.save!
+    end
+
+    render json: { success: true }, status: 200
+  end
+
   # DELETE /guests/1
   def destroy
     @guest.destroy
@@ -75,7 +91,9 @@ class GuestsController < ApplicationController
         :participating,
         :companions,
         :emails_sent,
-        :salutation
+        :salutation,
+        :enqueue_all_guests,
+        :enqueue_guest
       )
     end
 end

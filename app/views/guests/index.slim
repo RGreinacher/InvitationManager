@@ -1,8 +1,12 @@
+- content_for :javascript_includes do
+  = javascript_include_tag 'checkboxhandler'
+
 p#notice = notice
 
 .row
   .col-xs-9
-    h1.new-guest-heading = t('guests.index.headline')
+    h1.new-guest-heading data-ajax-path="#{guests_enqueue_path}"
+      = t('guests.index.headline')
   .col-xs-3
     = link_to fa_icon('plus'), new_guest_path, class: 'new-guest-link'
 

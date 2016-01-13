@@ -2,6 +2,8 @@
   table.table.table-hover
     thead
       tr
+        th
+          input type='checkbox' name='queue-company' value='all' autocomplete='off' class='select-all-guests'
         th = t('guests.attributes.name')
         th = t('guests.attributes.companions')
         th = t('guests.attributes.presents')
@@ -11,6 +13,9 @@
     tbody
       - guests.each do |guest| %
         tr
+          td
+            - (guest.queued)? (checked = "checked='checked'") : (checked = '')
+            == "<input type='checkbox' name='queue-guest' value='#{guest.id}' id='guest-id-#{guest.id}' class='guest-checkbox' autocomplete='off' #{checked} />"
           td = link_to(guest.name, guest) + " (#{guest.email})"
           td = guest.companions > 0? "+#{guest.companions}" : fa_icon('minus')
           td = guest.presents.count > 0? fa_icon('check') : fa_icon('minus')
