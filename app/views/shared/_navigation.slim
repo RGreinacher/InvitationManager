@@ -4,4 +4,12 @@ nav
       .col-sm-8
         = t('navigation.title')
       .col-sm-4.text-right
-        = link_to t('navigation.guests_link'), guests_path
+        - if admin_signed_in?
+          = link_to t('navigation.guests_link'), guests_path
+          = link_to fa_icon('sign-out'),
+                    destroy_admin_session_path,
+                    :method => :delete
+        - if guest_signed_in?
+          = link_to fa_icon('sign-out'),
+                    destroy_guest_session_path,
+                    :method => :delete

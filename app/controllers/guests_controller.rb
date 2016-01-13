@@ -1,4 +1,6 @@
 class GuestsController < ApplicationController
+  before_action :authenticate_admin!, except: [:edit, :update]
+  before_action :check_guest, only: [:edit, :update]
   before_action :set_guest, only: [:show, :edit, :update, :destroy]
 
   # GET /guests

@@ -1,0 +1,15 @@
+de:
+    devise:
+        failure:
+            admin:
+                unauthenticated: Um diesen Teil der Web App sehen zu können, musst du dich als Admin authentifizieren.
+            guest:
+                unauthenticated: Um die Seite nutzen zu können logge dich bitte mit dem persönlichen Link ein, den du per Email erhalten hast.
+        sessions:
+            admin:
+                signed_in: Du wurdest erfolgreich eingeloggt!
+        views:
+            login:
+                headline: Logge dich ein!
+                remember-user-checkbox: lass mich eingeloggt
+                submit: "Los geht's!"

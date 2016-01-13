@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :admins
+  devise_for :guests
+  root 'application#root'
+
   resources :presents
 
   get '/guests/prepare_email' => 'guests#prepare_email', as: 'guests_prepare_email'
