@@ -5,6 +5,7 @@ de:
                 unauthenticated: Um diesen Teil der Web App sehen zu können, musst du dich als Admin authentifizieren.
             guest:
                 unauthenticated: Um die Seite nutzen zu können logge dich bitte mit dem persönlichen Link ein, den du per Email erhalten hast.
+                not_found_in_database: Diese Logindaten sind leider nicht korrekt.
         sessions:
             admin:
                 signed_in: Du wurdest erfolgreich eingeloggt!

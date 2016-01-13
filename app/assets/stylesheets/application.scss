@@ -97,3 +97,17 @@ nav, footer {
     color: $text-over-color;
   }
 }
+
+.imprint {
+  img {
+    width: 100%;
+  }
+
+  .copyright-e-recht {
+    margin-top: 30px;
+
+    a {
+      margin-left: 5px;
+    }
+  }
+}
