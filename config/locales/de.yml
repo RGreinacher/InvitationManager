@@ -98,6 +98,6 @@ de:
             update-success: Informationen wurden erfolgreich aktualisiert.
             present-unable-to-create: Dieses Mitbringsel kann leider nicht erstellt werden. Versuche eine andere Formulierung.
     navigation:
-        title: Ein Vierteljahrhundert RG
+        title: Ein Vierteljahrhundert Robert
         guests_link: Alle Gäste anzeigen
     delete-confirmation: Bist du sicher? Das kann nicht rückgängig gemacht werden.

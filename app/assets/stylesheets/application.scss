@@ -74,6 +74,14 @@ a, a:visited, a:hover {
 nav {
   background-color: $key-color;
 
+  .page-title {
+    font-size: 1.3em;
+
+    .fa {
+      margin-right: 10px;
+    }
+  }
+
   a {
     margin-right: 10px;
 

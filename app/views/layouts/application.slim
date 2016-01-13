@@ -1,7 +1,8 @@
 doctype html
 html
   head
-    title Ein Vierteljahrhundert RG
+    title
+      = t('navigation.title')
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
     link href="#{asset_path('favicon.png')}" rel="icon" type="image/png"
