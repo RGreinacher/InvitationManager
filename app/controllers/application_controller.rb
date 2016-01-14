@@ -21,25 +21,8 @@ class ApplicationController < ActionController::Base
   private
 
   def check_guest
-    ap admin_signed_in?
-    ap guest_signed_in?
-    ap params
-    ap current_guest
     return true if admin_signed_in?
     return true if params[:id] == current_guest.id.to_s
-    ap 'auth guest'
-    # redirect_to edit_guest_path(current_guest)
     authenticate_admin!
-    # return true if params[:guest] && params[:id] == 'edit'
-    # guest_check_id = params[:guest_id] || params[:id]
-    # authenticate_admin! if current_guest.id != guest_check_id.to_i
-    # if params[:controller] == 'people' && params[:action] != 'new' && params[:action] != 'create'
-    #   if params[:action] == 'destroy_image'
-    #     person_check_id = params[:person_id]
-    #   else
-    #     person_check_id = params[:id]
-    #   end
-    #   authenticate_admin! if Person.find(person_check_id).guest != current_guest
-    # end
   end
 end
