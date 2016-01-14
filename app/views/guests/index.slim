@@ -20,3 +20,6 @@ h3 = "Absagen: #{@turned_down_guests.count + @turned_down_guests.sum(:companions
 
 h3 = "Noch nicht entschieden: #{@undecided_guests.count + @undecided_guests.sum(:companions)}"
 = render 'guest_list', guests: @undecided_guests
+
+h3 = "Noch nicht eingeloggt: #{@never_logged_in_guests.count + @never_logged_in_guests.sum(:companions)}"
+= render 'guest_list', guests: @never_logged_in_guests

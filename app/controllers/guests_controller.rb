@@ -8,7 +8,8 @@ class GuestsController < ApplicationController
     @participating_guests = Guest.where(participating: 3).order(:name)
     @not_sure_guests = Guest.where(participating: 2).order(:name)
     @turned_down_guests = Guest.where(participating: 1).order(:name)
-    @undecided_guests = Guest.where(participating: 0).order(:name)
+    @undecided_guests = Guest.where('sign_in_count > 0 and participating = 0').order(:name)
+    @never_logged_in_guests = Guest.where(sign_in_count: 0)
   end
 
   # GET /guests/1
