@@ -48,6 +48,10 @@ p, ol, ul, td {
   font-size: 1em;
 }
 
+th, td {
+  word-break: break-all;
+}
+
 a, a:visited, a:hover {
   background-color: inherit;
   color: $text-color;
