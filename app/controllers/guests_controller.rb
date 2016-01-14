@@ -66,7 +66,10 @@ class GuestsController < ApplicationController
 
         format.html { redirect_to edit_guest_path(@guest), notice: t('flashes.messages.update-success') }
       else
-        format.html { render :edit }
+        format.html {
+          edit
+          render :edit
+        }
       end
     end
   end
