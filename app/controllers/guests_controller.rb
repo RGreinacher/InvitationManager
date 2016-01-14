@@ -9,7 +9,7 @@ class GuestsController < ApplicationController
     @not_sure_guests = Guest.where(participating: 2).order(:name)
     @turned_down_guests = Guest.where(participating: 1).order(:name)
     @undecided_guests = Guest.where('sign_in_count > 0 and participating = 0').order(:name)
-    @never_logged_in_guests = Guest.where(sign_in_count: 0)
+    @never_logged_in_guests = Guest.where(sign_in_count: 0).order(:name)
   end
 
   # GET /guests/1
@@ -48,7 +48,22 @@ class GuestsController < ApplicationController
   # PATCH/PUT /guests/1
   def update
     respond_to do |format|
+      pre_update_participating_state = @guest.participating
+
+      # update guest information
       if @guest.update(guest_params)
+
+        # send admin notification mail
+        if pre_update_participating_state != guest_params[:participating]
+          GuestNotifyMailer.admin_notify_mail(
+            @guest.name,
+            @guest.participating,
+            guest_params[:participating],
+            Guest.first,
+            (Guest.where(participating: 3).count + Guest.where(participating: 3).sum(:companions))
+          ).deliver_later
+        end
+
         format.html { redirect_to edit_guest_path(@guest), notice: t('flashes.messages.update-success') }
       else
         format.html { render :edit }

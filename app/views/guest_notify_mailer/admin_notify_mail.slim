@@ -1,0 +1,17 @@
+ruby:
+  url = "http://#{ENV.fetch('DOMAIN')}/?token=#{@admin_guest.token}"
+  new_state = t('enums.guest.participating.' + @new_participation_state)
+  previous_state = t('enums.guest.participating.' + @previous_participation_state)
+
+h2 = "#{@guest_name}: #{new_state}"
+
+p
+  = "Vorheriger Status von #{@guest_name}: #{previous_state}"
+  br
+  = "Bisher gibt es damit #{@participants_count} Teilnehmer."
+
+p
+  = "Verwende diesen Link um dich selbst (#{@admin_guest.name}) als Gast einzuloggen:"
+  br
+  a href="#{url}"
+    = url

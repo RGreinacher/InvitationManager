@@ -78,6 +78,9 @@ de:
         description: Die E-Mails werden nun an die ausgewählten Gäste versandt. Anschließend wird ihre Markierung aufgehoben.
         buttons:
             back-to-index: Zurück zur Gästeliste
+    admin-notifications:
+        email: buffer@robert-greinacher.de
+        subject: Gästestatus geändert
     enums:
         guest:
             participating:
