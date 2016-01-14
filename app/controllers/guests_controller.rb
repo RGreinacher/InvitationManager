@@ -37,7 +37,7 @@ class GuestsController < ApplicationController
 
     respond_to do |format|
       if @guest.save
-        format.html { redirect_to @guest, notice: t('flashes.messages.create-success') }
+        format.html { redirect_to guests_path, notice: t('flashes.messages.create-success') }
       else
         format.html { render :new }
       end

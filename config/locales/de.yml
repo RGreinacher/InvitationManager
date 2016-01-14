@@ -91,8 +91,8 @@ de:
             error: Fehler!
             alert: Achtung!
         messages:
-            create-success: Gast wurde erfolgreich erstellt.
-            present-create-success: Mitbringsel wurde erfolgreich erstellt.
+            create-success: Gast wurde erfolgreich angelegt.
+            present-create-success: Mitbringsel wurde erfolgreich angelegt.
             delete-success: Gast wurde erfolgreich gelöscht.
             present-delete-success: Mitbringsel wurde erfolgreich gelöscht.
             update-success: Informationen wurden erfolgreich aktualisiert.

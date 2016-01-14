@@ -7,5 +7,7 @@ de:
                         companions:
                             greater_than_or_equal_to: Du kannst keine Freunde wegnehmen. Deshalb muss diese Zahl größer oder gleich Null sein.
                             less_than_or_equal_to: Bitte renn mir nicht die Bude ein und bring höchstens die fünf coolsten deiner Freunde mit.
+                        email:
+                            taken: Die eingegebene Email-Adresse wird bereits verwendet, muss aber eindeutig sein.
                         notice:
                             too_long: Datenbanken sind irre teuer, drum versuche dich bitte auf zwei SMS Längen zu beschränken. Du kannst mir auch gerne eine Mail schreiben, dann hat Strato das an der Backe..!
