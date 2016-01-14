@@ -33,6 +33,7 @@ class GuestsController < ApplicationController
     @guest.companions = 0
     @guest.emails_sent = 0
     @guest.token = SecureRandom.hex
+    @guest.password = SecureRandom.hex
 
     respond_to do |format|
       if @guest.save
