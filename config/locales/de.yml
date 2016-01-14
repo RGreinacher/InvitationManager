@@ -61,7 +61,8 @@ de:
             subject:
                 label: Betreff
                 value: Geburtstagseinladung -  Vierteljahrhundert Party
-            intro: Hallo!
+            salutation: Lieber Gast,
+            intro: ich möchte dich gerne zu meinem Vierteljahrhundertgeburtstag einladen!
             outro: Ich freue mich auf dich! Beste Grüße Robert
         link-info: 'Dein persönlicher Anmeldelink:'
         guests-list:

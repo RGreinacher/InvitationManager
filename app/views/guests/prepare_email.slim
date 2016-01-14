@@ -16,6 +16,10 @@
                                 value:  t('prepare-email.edit-text.subject.value') }
     .row
       .col-xs-12
+        p
+          = t('prepare-email.edit-text.salutation')
+    .row
+      .col-xs-12
         = f.input :email_intro,
                   as: :text,
                   label: false,

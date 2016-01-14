@@ -1,6 +1,8 @@
 ruby:
   url = "http://#{ENV.fetch('DOMAIN')}/?token=#{@guest.token}"
 
+= "#{@guest.salutation} #{@guest.name},"
+br
 == @prelink_content.gsub("\n", "<br />")
 br
 br
