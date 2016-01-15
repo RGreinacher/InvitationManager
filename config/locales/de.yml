@@ -104,4 +104,4 @@ de:
     navigation:
         title: Ein Vierteljahrhundert Robert
         guests_link: Alle Gäste anzeigen
-    delete-confirmation: Bist du sicher? Das kann nicht rückgängig gemacht werden.
+    delete-confirmation: Möchtest du %{user} (%{email}) wirklich löschen? Das kann nicht rückgängig gemacht werden.

@@ -23,6 +23,6 @@
           td = guest.emails_sent
           td.options-cell
             = link_to fa_icon('pencil'), edit_guest_path(guest)
-            = link_to fa_icon('trash'), guest, method: :delete, data: { confirm: t('delete-confirmation') }
+            = link_to fa_icon('trash'), guest, method: :delete, data: { confirm: t('delete-confirmation', user: guest.name, email: guest.email) }
 - else
   p = t('guests.guest-list.no-guests-in-list')

@@ -3,7 +3,7 @@
     h1.show-guest-heading = @guest.name
   .col-xs-3.show-guest-options
     = link_to fa_icon('pencil'), edit_guest_path(@guest)
-    = link_to fa_icon('trash'), @guest, method: :delete, data: { confirm: t('delete-confirmation') }
+    = link_to fa_icon('trash'), @guest, method: :delete, data: { confirm: t('delete-confirmation', user: @guest.name, email: @guest.email) }
 
 table
   tr
