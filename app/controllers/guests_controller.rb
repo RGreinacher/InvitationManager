@@ -24,7 +24,7 @@ class GuestsController < ApplicationController
   # GET /guests/1/edit
   def edit
     @present = Present.new
-    @presents = Present.all.order(:description)
+    @presents = Present.all.order('LOWER(description)')
   end
 
   # POST /guests

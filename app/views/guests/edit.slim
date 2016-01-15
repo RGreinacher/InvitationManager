@@ -16,7 +16,7 @@ p
 p
   | Ich freue mich sehr dich zu sehen. Falls du auch noch Lust hast Dinge die du selbst magst mitzubringen kannst du das in die entsprechende Liste schreiben die für alle Eingeladenen sichtbar ist.
 
-= simple_form_for @guest, html: { class: 'guest-edit-form', 'data-ajax-path' => edit_guest_path(@guest) } do |f|
+= simple_form_for @guest, html: { class: 'guest-edit-form' } do |f|
   .row
     .col-sm-7.field
       = f.input :participating,
