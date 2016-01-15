@@ -57,18 +57,28 @@ class GuestsController < ApplicationController
         if pre_update_participating_state != guest_params[:participating]
           GuestNotifyMailer.admin_notify_mail(
             @guest.name,
+            pre_update_participating_state,
             @guest.participating,
-            guest_params[:participating],
             Guest.first,
             (Guest.where(participating: 3).count + Guest.where(participating: 3).sum(:companions))
           ).deliver_later
         end
 
-        format.html { redirect_to edit_guest_path(@guest), notice: t('flashes.messages.update-success') }
+        format.html {
+          redirect_to edit_guest_path(@guest), notice: t('flashes.messages.update-success')
+        }
+
+        format.json {
+          render status: 200, text: '"accepted"'
+        }
       else
         format.html {
           edit
           render :edit
+        }
+
+        format.json {
+          render nothing: true, status: 400
         }
       end
     end

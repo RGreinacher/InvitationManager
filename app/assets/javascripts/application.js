@@ -17,3 +17,4 @@
 //= require bootstrap-sprockets
 //= require cookies_eu
 //= stub checkboxhandler
+//= stub sendeditformhandler
