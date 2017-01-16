@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  before_action :set_copyright_year
 
   def root
     if params[:token]
@@ -24,5 +25,10 @@ class ApplicationController < ActionController::Base
     return true if admin_signed_in?
     return true if params[:id] == current_guest.id.to_s
     authenticate_admin!
+  end
+
+  def set_copyright_year
+    require 'date'
+    @current_year = Date.today.strftime("%Y")
   end
 end

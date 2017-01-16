@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.3'
+ruby '2.3.1'
 
 gem 'actionpack-action_caching'
 gem 'actionpack-page_caching'
@@ -14,6 +14,7 @@ gem 'dotenv-rails'
 gem 'enum_help'
 gem 'fastclick-rails'
 gem 'font-awesome-rails'
+gem 'foreman'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'modernizr-rails'

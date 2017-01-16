@@ -14,7 +14,8 @@ html
       .container
         = render 'shared/flash'
         = yield
-    = render 'shared/footer'
+    = render 'shared/footer',
+             current_year: @current_year
 
     == javascript_include_tag :application, 'data-turbolinks-track' => true
     = yield :javascript_includes

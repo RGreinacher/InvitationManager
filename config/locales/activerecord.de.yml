@@ -6,7 +6,7 @@ de:
                     attributes:
                         companions:
                             greater_than_or_equal_to: Du kannst keine Freunde wegnehmen. Deshalb muss diese Zahl größer oder gleich Null sein.
-                            less_than_or_equal_to: Bitte renn mir nicht die Bude ein und bring höchstens die fünf coolsten deiner Freunde mit.
+                            less_than_or_equal_to: Bitte renn uns nicht die Bude ein und bring höchstens die fünf coolsten deiner Freunde mit.
                             not_a_number: Hier bitte nur Zahlen. Versuche das Notizfeld wenn du Buchstaben hinterlassen möchtest.
                         email:
                             taken: Die eingegebene Email-Adresse wird bereits verwendet, muss aber eindeutig sein.
