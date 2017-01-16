@@ -6,6 +6,7 @@ capybara-*.html
 /db/*.sqlite3
 /db/*.sqlite3-journal
 /public/system
+/public/assets
 /coverage/
 /spec/tmp
 **.orig
@@ -31,5 +32,7 @@ config/secrets.yml
 *.bowerrc
 bower.json
 
-# Ignore pow environment settings
+# Ignore environment settings
 .powenv
+.env.production
+/Procfile.production
