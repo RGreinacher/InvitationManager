@@ -1,5 +1,10 @@
 ruby:
-  url = "http://#{ENV.fetch('DOMAIN')}/?token=#{@guest.token}"
+  if ENV['USE_SSL'] == 'true'
+    protocol = 'https'
+  else
+    protocol = 'http'
+  end
+  url = "#{protocol}://#{ENV.fetch('DOMAIN')}/?token=#{@guest.token}"
 
 = "#{@guest.salutation} #{@guest.name},"
 br
