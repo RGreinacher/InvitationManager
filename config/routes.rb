@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get '/' => redirect('/api/v1')
 
     namespace :v1 do
+      get '/' => redirect('/api/v1/guest_list')
       get '/guest_list' => 'guest_list#show'
     end
   end
