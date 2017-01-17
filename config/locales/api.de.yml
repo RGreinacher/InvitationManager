@@ -1,0 +1,3 @@
+de:
+  api-errors:
+    unauthorized: Bitte gib einen gültigen API-Token an um die Invitation Manager API zu nutzen.
