@@ -93,14 +93,14 @@ class GuestsController < ApplicationController
 
   # GET /guests/:id/turn_down
   def turn_down
-    current_guest.participating = :not_sure
+    current_guest.participating = :turned_down
     current_guest.save!
     redirect_to edit_guest_path(current_guest)
   end
 
   # GET /guests/:id/is_undecided
   def is_undecided
-    current_guest.participating = :turned_down
+    current_guest.participating = :not_sure
     current_guest.save!
     redirect_to edit_guest_path(current_guest)
   end
