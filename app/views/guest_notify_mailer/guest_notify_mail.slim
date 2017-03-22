@@ -4,17 +4,32 @@ ruby:
   else
     protocol = 'http'
   end
-  url = "#{protocol}://#{ENV.fetch('DOMAIN')}/?token=#{@guest.token}"
+
+  url_participating = "#{protocol}://#{ENV.fetch('DOMAIN')}/?guest_action=will_participate&token=#{@guest.token}"
+  url_turned_down = "#{protocol}://#{ENV.fetch('DOMAIN')}/?guest_action=turn_down&token=#{@guest.token}"
+  url_not_sure = "#{protocol}://#{ENV.fetch('DOMAIN')}/?guest_action=is_undecided&token=#{@guest.token}"
 
 = "#{@guest.salutation} #{@guest.name},"
 br
 == @prelink_content.gsub("\n", "<br />")
 br
 br
-= t('prepare-email.link-info')
+
+= t('prepare-email.link-description.participating')
 br
-a href="#{url}"
-  = url
+a href="#{url_participating}" style="margin-left: 1em;"
+  = url_participating
+br
+= t('prepare-email.link-description.turned-down')
+br
+a href="#{url_turned_down}" style="margin-left: 1em;"
+  = url_turned_down
+br
+= t('prepare-email.link-description.not-sure')
+br
+a href="#{url_not_sure}" style="margin-left: 1em;"
+  = url_not_sure
+
 br
 br
 == @postlink_content.gsub("\n", "<br />")

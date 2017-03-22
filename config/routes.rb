@@ -21,9 +21,9 @@ Rails.application.routes.draw do
   patch '/guests/enqueue' => 'guests#enqueue', as: 'guests_enqueue'
 
   resources :guests do
-    get '/will_participate' => 'guests#will_participate', as: 'guest_will_participate'
-    get '/turn_down' => 'guests#turn_down', as: 'guest_turn_down'
-    get '/is_undecided' => 'guests#is_undecided', as: 'guest_is_undecided'
+    get '/will_participate' => 'guests#will_participate', as: 'will_participate'
+    get '/turn_down' => 'guests#turn_down', as: 'turn_down'
+    get '/is_undecided' => 'guests#is_undecided', as: 'is_undecided'
   end
 
   get '/impressum' => 'application#imprint', as: 'imprint'

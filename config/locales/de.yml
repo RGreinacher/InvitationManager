@@ -24,7 +24,7 @@ de:
             notice-label: Notiz an die Hageltruppe
             save: Antworten speichern
     presents:
-        headline: Optionale Mitbringsel
+        headline: Mitbringselliste
         new-description: Was willst du mitbringen?
         input-placeholder: Salat, Quiche, Bier, Wein, Kuchen, ...
         save: Mitbringsel hinzufügen
@@ -43,7 +43,10 @@ de:
             salutation: Lieber Gast,
             intro: wir möchten dich gerne zu unserer Einweihungsparty einladen!
             outro: wir freuen uns auf dich! Herzliche Grüße, die Hageltruppe
-        link-info: 'Dein persönlicher Zu(ab)sagelink:'
+        link-description:
+          participating: 'Dein persönlicher Zusagelink:'
+          turned-down: 'Falls du nicht kommen kannst, klicke ganz kurz hier drauf um uns Bescheid zu geben:'
+          not-sure: 'Falls du dir noch nicht sicher bist, klicke hier. Deine Antwort kannst du später nochmal ändern:'
         guests-list:
             headline: Email an folgende Gäste senden
             blank: Es wurde kein Gast für den Emailversand ausgewählt

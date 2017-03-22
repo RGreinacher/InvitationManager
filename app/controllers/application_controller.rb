@@ -11,7 +11,17 @@ class ApplicationController < ActionController::Base
     end
 
     if guest_signed_in?
+      if params[:guest_action] == 'will_participate'
+        return redirect_to guest_will_participate_path(current_guest)
+      elsif params[:guest_action] == 'turn_down'
+        return redirect_to guest_turn_down_path(current_guest)
+      elsif params[:guest_action] == 'is_undecided'
+        return redirect_to guest_is_undecided_path(current_guest)
+      end
+
+      raise 3.to_s
       return redirect_to edit_guest_path(current_guest)
+
     elsif admin_signed_in?
       return redirect_to guests_path
     end

@@ -1,5 +1,5 @@
 class GuestsController < ApplicationController
-  before_action :authenticate_admin!, except: [:edit, :update]
+  before_action :authenticate_admin!, except: [:edit, :update, :will_participate, :turn_down, :is_undecided]
   before_action :check_guest, only: [:edit, :update]
   before_action :set_guest, only: [:show, :edit, :update, :destroy]
 
@@ -86,17 +86,23 @@ class GuestsController < ApplicationController
 
   # GET /guests/:id/will_participate
   def will_participate
-    @guest.participating
+    current_guest.participating = :participating
+    current_guest.save!
+    redirect_to edit_guest_path(current_guest)
   end
 
   # GET /guests/:id/turn_down
   def turn_down
-
+    current_guest.participating = :not_sure
+    current_guest.save!
+    redirect_to edit_guest_path(current_guest)
   end
 
   # GET /guests/:id/is_undecided
   def is_undecided
-
+    current_guest.participating = :turned_down
+    current_guest.save!
+    redirect_to edit_guest_path(current_guest)
   end
 
   # GET /guests/prepare_email

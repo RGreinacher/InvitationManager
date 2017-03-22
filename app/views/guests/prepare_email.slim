@@ -28,10 +28,20 @@
     .row
       .col-xs-12
         p.email-text-intermezzo
-          = t('prepare-email.link-info')
+          = t('prepare-email.link-description.participating')
           br
-          - login_url = "http://#{ENV.fetch('DOMAIN')}/?token=#{SecureRandom.hex}"
-          = link_to login_url, login_url
+          a href="#" style="margin-left: 1em;"
+            = "http://#{ENV.fetch('DOMAIN')}/?guest_action=will_participate&token=#{SecureRandom.hex}"
+          br
+          = t('prepare-email.link-description.turned-down')
+          br
+          a href="#" style="margin-left: 1em;"
+            = "http://#{ENV.fetch('DOMAIN')}/?guest_action=turn_down&token=#{SecureRandom.hex}"
+          br
+          = t('prepare-email.link-description.not-sure')
+          br
+          a href="#" style="margin-left: 1em;"
+            = "http://#{ENV.fetch('DOMAIN')}/?guest_action=is_undecided&token=#{SecureRandom.hex}"
     .row
       .col-xs-12
         = f.input :email_outro,

@@ -1,7 +1,22 @@
+<%
+if ENV['USE_SSL'] == 'true'
+  protocol = 'https'
+else
+  protocol = 'http'
+end
+url_participating = "#{protocol}://#{ENV.fetch('DOMAIN')}/?guest_action=will_participate&token=#{@guest.token}"
+url_turned_down = "#{protocol}://#{ENV.fetch('DOMAIN')}/?guest_action=turn_down&token=#{@guest.token}"
+url_not_sure = "#{protocol}://#{ENV.fetch('DOMAIN')}/?guest_action=is_undecided&token=#{@guest.token}"
+%>
+
 <%= "#{@guest.salutation} #{@guest.name}," %>
 <%= @prelink_content %>
 
-<%= t('prepare-email.link-info') %>
-<%= "http://#{ENV.fetch('DOMAIN')}/?token=#{@guest.token}" %>
+<%= t('prepare-email.link-description.participating') %>
+<%= "#{url_participating}" %>
+<%= t('prepare-email.link-description.turned-down') %>
+<%= "#{url_turned_down}" %>
+<%= t('prepare-email.link-description.not-sure') %>
+<%= "#{url_not_sure}" %>
 
 <%= @postlink_content %>
