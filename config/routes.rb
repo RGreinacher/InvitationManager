@@ -19,7 +19,12 @@ Rails.application.routes.draw do
   get '/guests/prepare_email' => 'guests#prepare_email', as: 'guests_prepare_email'
   patch '/guests/send_emails' => 'guests#send_emails', as: 'guests_send_emails'
   patch '/guests/enqueue' => 'guests#enqueue', as: 'guests_enqueue'
-  resources :guests
+
+  resources :guests do
+    get '/will_participate' => 'guests#will_participate', as: 'guest_will_participate'
+    get '/turn_down' => 'guests#turn_down', as: 'guest_turn_down'
+    get '/is_undecided' => 'guests#is_undecided', as: 'guest_is_undecided'
+  end
 
   get '/impressum' => 'application#imprint', as: 'imprint'
 end

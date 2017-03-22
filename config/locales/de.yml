@@ -11,7 +11,7 @@ de:
             token: Token
             options: Optionen
         index:
-            headline: Gästeliste für den 21. Januar
+            headline: Gästeliste für den 8. April
         guest-list:
             no-guests-in-list: Keine Gäste in dieser Liste
         new:
@@ -21,12 +21,12 @@ de:
         edit:
             participation-selection: Meine Antwort
             companions-label: Ich bringe zusätzlich so viele Leute mit
-            notice-label: Notiz an Robert
+            notice-label: Notiz an die Hageltruppe
             save: Antworten speichern
     presents:
         headline: Optionale Mitbringsel
         new-description: Was willst du mitbringen?
-        input-placeholder: Bier, Wein, Kuchen, gute Laune, ...
+        input-placeholder: Salat, Quiche, Bier, Wein, Kuchen, ...
         save: Mitbringsel hinzufügen
         description: Ding
         guest: Mitbringende(r)
@@ -34,15 +34,15 @@ de:
         no-presents: Bisher bringt niemand etwas mit.
     prepare-email:
         headline: E-Mail Versand vorbereiten
-        from-address-name: hallo@robert-greinacher.de
+        from-address-name: feierei@robert-greinacher.de
         edit-text:
             headline: Text & Betreff
             subject:
                 label: Betreff
-                value: Geburtstagseinladung von Robert, 21. Jan
+                value: Einweihungspartyeinladung von Vera, Charlotte, Tobi und Robert - 8. April
             salutation: Lieber Gast,
-            intro: ich möchte dich gerne zu meinem Geburtstag einladen!
-            outro: Ich freue mich auf dich! Beste Grüße Robert
+            intro: wir möchten dich gerne zu unserer Einweihungsparty einladen!
+            outro: wir freuen uns auf dich! Herzliche Grüße, die Hageltruppe
         link-info: 'Dein persönlicher Zu(ab)sagelink:'
         guests-list:
             headline: Email an folgende Gäste senden
@@ -58,7 +58,7 @@ de:
         buttons:
             back-to-index: Zurück zur Gästeliste
     admin-notifications:
-        email: buffer@robert-greinacher.de
+        email: feierei@robert-greinacher.de
         subject: Gästestatus geändert
     enums:
         guest:
@@ -81,6 +81,6 @@ de:
             update-success: Informationen wurden erfolgreich aktualisiert.
             present-unable-to-create: Dieses Mitbringsel kann leider nicht erstellt werden. Versuche eine andere Formulierung.
     navigation:
-        title: 26 Jahre Robert
+        title: Feierei auf dem Hagelberg
         guests_link: Alle Gäste anzeigen
     delete-confirmation: Möchtest du %{user} (%{email}) wirklich löschen? Das kann nicht rückgängig gemacht werden.

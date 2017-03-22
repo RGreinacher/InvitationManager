@@ -84,6 +84,21 @@ class GuestsController < ApplicationController
     end
   end
 
+  # GET /guests/:id/will_participate
+  def will_participate
+    @guest.participating
+  end
+
+  # GET /guests/:id/turn_down
+  def turn_down
+
+  end
+
+  # GET /guests/:id/is_undecided
+  def is_undecided
+
+  end
+
   # GET /guests/prepare_email
   def prepare_email
     @guests = Guest.where(queued: true)
